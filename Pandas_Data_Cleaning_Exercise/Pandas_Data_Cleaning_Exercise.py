@@ -71,10 +71,30 @@ list2 # output is [8, 3, 90, 6, 88]
 
 list4 = range(5,10) # range(n,m) yields a list from n to m-1
 list5 = range(5) # range(m) yields list from 0 to m-1
-list5 = ['a', 'r', 's', 't', 'u']
+list5 = ['q', 'r', 's', 't', 'u']
 
 # converting lists to series
 s1 = Series(list4)
 s2 = Series(list5)
 s1
 s2
+
+
+# create Dataframe from lists OR series
+list7 = range(60, 65)
+zip(list4, list5)
+zip1 = zip(list4, list5, list7) # parenthases are for functions, brackets are for extraction
+df1 = DataFrame(zip1)
+
+df1 = DataFrame(zip1, columns = ['two','apple',':)'])
+df1['apple'] # returns q,r,s,t,u in a vertical column
+
+df3 = DataFrame(zip1, columns = [2,'apple',':)'])
+df3
+df3[[2,':)']][3:4] # get column '2' and ':)'. Then get row 3... returns 8, 63
+
+# make dataframe using dict notation
+df4 = DataFrame({':(' : list4, 9 : list6}) # l
+
+# creating DataFrame from a series ONLY
+df5 = pd.concat([s1,s2])
